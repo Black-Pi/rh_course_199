@@ -22,8 +22,8 @@ zu finden unter: man man
 
 ## hard link
 * gleiche inode-Nummer
-* Referenzzähler wird hochgezählt
-* `-rw-r--r--.  2 root root 1921 Jun 19 13:26 philipp`
+* Referenzzähler wird hochgezählt `-rw-r--r--.  2 root root 1921 Jun 19 13:26 philipp`
+* inodes suchen: `find / -inum 1111111`
 
 ## Commands
 ### stat
