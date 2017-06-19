@@ -20,10 +20,11 @@ zu finden unter: man man
 * Wenn eine Datei angegriffen wird wird immer von / weggegangen um die inodes aufzulösen (bei xfs hat .=128 und ..=128)
 * => um eine Datei in einem Unterverzeichnis anzugreifen braucht man vom / weg zumindest bei others x-Berechtigungen
 
-## hard link
-* gleiche inode-Nummer
+## Hard Link
+* gleiche inode-Nummer (Referenz)
 * Referenzzähler wird hochgezählt `-rw-r--r--.  2 root root 1921 Jun 19 13:26 philipp`
 * inodes suchen: `find / -inum 1111111`
+* Nachteil: nur auf reguläre Dateien; funktioniert nicht über Dateisystemgrenzen hinweg
 
 ## Commands
 ### stat
