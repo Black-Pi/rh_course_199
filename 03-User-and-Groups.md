@@ -37,3 +37,12 @@ Weitere Hilfsgruppe zu Susi hinzufügen: `usermod -a -G wheel susi`
 
 ### klist
 Auflisten der Kerberos Tickets
+
+### Using Identity Management Services
+* Kerberos: /etc/krb5.conf
+* PAM: /etc/pam.d/password-auth
+* authconfig, authconfig-tui, system-config-authentication
+* pam Module für LDAP, Kerberos installieren
+* SSSD Modul: kümmert sich um die Authentifizierung der User (egal von wo die User kommen)
+** /etc/sssd/sssd.conf => Konfiguration der Repositories (LDAP, Kerberos, usw.)
+* RedHat Doku für AD-Integration: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Windows_Integration_Guide/index.html
