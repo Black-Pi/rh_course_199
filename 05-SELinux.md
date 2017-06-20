@@ -19,6 +19,17 @@ Reparieren, so wie es sein sollte mit `restorecon -vR /var/ftp`
 * In Konfigurationsfiles z.B. /etc/vsftpd/vsftpd.conf
 * Paket: selinux-policy-devel, man Pages für Services man <servicename>_selinux ; Dokus aus RPM anzeigen: `rpm -qd selinux-policy-devel | grep ftpd*`
 
+### SELinux Regel schreiben
+* Paket selinux-devel muss installiert sein
+* mit ausearch wird audit.log unter /var/log/audit durchsucht
+* eigene Regel schreiben
+````
+# alle selinux Meldungen sind mit avc im audit.log erfasst
+ausearch -tx 15:20 -m avc | audit2allow -m jf-syslog_shadow > jf-syslog_shadow.te
+cp /usr/share/selinux/devel/Makefile .
+make load
+````
+
 ## Commands
 ### sestatus
 ### setenforce
@@ -54,3 +65,4 @@ Found 1 semantic av rules:
 
 ````
 -s (source) -t (target) -c (type)
+
