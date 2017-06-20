@@ -5,8 +5,8 @@
 
 ## Berechtigungen
 ````
-sst rwx rwx rwx
-421 421 421 421
+sst rwx rwx rwx ./+
+421 421 421 421 ACL?
 
 t kommt auf die Stelle vom x bei others; kleines t bedeutet incl. x, großes T ohne x
 2. s kommt auf die Stelle vom x bei group, kleines s beduete incl. x, großes S ohne x
@@ -22,6 +22,22 @@ t kommt auf die Stelle vom x bei others; kleines t bedeutet incl. x, großes T o
 * Wird auf Verzeichnisse gesetzt: Neu erstellte Dateien erhalten die Gruppe vom Verzeichnis
 * Für Projektverzeichnisse sinnvoll
 * chmod 2XXX
+
+## Ausführbare Datein und Special Bits
+Set UID Bit (s) ODER/UND Set GID Bit (s) => Auf einer ausführbaren Datei gesetzt: Der Prozess wird mit den effektiven Rechten des Eigentümers UND/ODER der Gruppe ausgeführt (z.B. /usr/bin/passwd)
+
+## Prüfung von RPMs, ob jemand Änderungen durchgeführt hat
+````
+rpm -qf /usr/bin/ls #RPM herausfinden
+rpm -V coreutils #RPM verifizieren
+yum reinstall coreutils #Paket reinstallieren
+````
+
+## ACLs
+* Ab RHEL7 werden ACLs vom Filesystem unterstützt
+* ACLs werden bei der letzten Stelle der Berechtigungen mit + angezeigt
+* ACLs werden nichtmitkopiert und gesichert
+* Defaults bei Verzeichnissen (für Vererbung) mit `setfacl -m d:g:user:r-x /data`
 
 ## Commands
 ### umask
