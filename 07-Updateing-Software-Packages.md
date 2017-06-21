@@ -12,3 +12,15 @@ yum updateinfo list
 yum history info NUMBER
 yum history undo NUMBER_TO_RESET
 ````
+## GPG Key
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+## GPG Keys abfragen
+rpm -qa | grep gpg-pubkey
+
+## EPEL Repository
+* Ist für RedHat erlaubt
+* https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+* epel-release-latest-7.noarch.rpm installieren => EPEL Repo wird angelegt
+
+
