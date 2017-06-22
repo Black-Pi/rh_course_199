@@ -56,3 +56,10 @@ restorecon -v /etc/shadow
 #Entweder: `setenforce 0 && exit && systemctl default` oder `reboot`
 # nach dem booten: setenforce 1 setzen, falls setenforce 0 ist
 ````
+
+## grub2
+* /boot/grub2/grubenv => Default Kernel
+* Default-Kernel: grub2-set-default 'Title'
+* Title wird in /etc/grub2.cfg unter ^menuentries definiert
+* grub2 Änderungen im File `/etc/default/grub` und persistieren: `grub2-mkconfig > /etc/grub2.cfg`
+
