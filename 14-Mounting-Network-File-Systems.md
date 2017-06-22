@@ -16,3 +16,8 @@
 * keytab - Files auf beide Seiten (restorecon beim abholen des Tickets ausführen)
 * nfs-secure auf beide Seiten aktivieren
 * mount -o sec=krb5p servername:/shares /mnt
+
+# CIFS Shares
+* cifs-utils und samba-client Pakete
+* smbmount -L ... => list der Freigaben
+* in fstab die Option  credentials=... verwenden
