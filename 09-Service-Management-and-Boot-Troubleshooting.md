@@ -61,5 +61,5 @@ restorecon -v /etc/shadow
 * /boot/grub2/grubenv => Default Kernel
 * Default-Kernel: grub2-set-default 'Title'
 * Title wird in /etc/grub2.cfg unter ^menuentries definiert
-* grub2 Änderungen im File `/etc/default/grub` und persistieren: `grub2-mkconfig > /etc/grub2.cfg`
+* grub2 Änderungen im File `/etc/default/grub` und persistieren: `grub2-mkconfig > /boot/grub2/grub2.cfg`
 
